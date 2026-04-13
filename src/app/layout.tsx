@@ -45,6 +45,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'NexaGrow Agency', url: 'https://markiting-services-web.vercel.app' }],
   creator: 'NexaGrow Agency',
   publisher: 'NexaGrow Agency',
+  verification: {
+    google: '2mXFaag5G1fFLK_0DKABuHlB2CXFQyqPT6hfzNYFae0',
+  },
   robots: {
     index: true,
     follow: true,
