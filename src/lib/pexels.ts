@@ -30,7 +30,7 @@ export const images = {
   why4: `${IMG}/3182812/pexels-photo-3182812.jpeg${OPT_SM}`,
 
   // Team
-  asad: `${IMG}/3785104/pexels-photo-3785104.jpeg${OPT_SM}`,
+  asad: `${IMG}/2182970/pexels-photo-2182970.jpeg${OPT_SM}`,
   james: `${IMG}/1043474/pexels-photo-1043474.jpeg${OPT_SM}`,
   omar: `${IMG}/3785079/pexels-photo-3785079.jpeg${OPT_SM}`,
   sarah: `${IMG}/774909/pexels-photo-774909.jpeg${OPT_SM}`,
