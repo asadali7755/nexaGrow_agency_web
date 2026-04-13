@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'NexaGrow Contact <contact@nexagrow.agency>',
+          from: 'NexaGrow Contact <leoali851@gmail.com>',
           to: ['leoali851@gmail.com'],
           subject: `New Contact Form: ${service} — ${name}`,
           html: `
