@@ -12,7 +12,7 @@ export default function CTASection() {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`}
+            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi NexaGrow! 👋 I\'m interested in growing my business with your digital marketing services. Let\'s discuss!')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-white text-brand font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg"

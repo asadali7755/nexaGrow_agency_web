@@ -9,7 +9,7 @@ export const teamMembers: TeamMember[] = [
     origin: 'Pakistan',
     flag: '🇵🇰',
     skills: ['Digital Strategy', 'Growth Marketing', 'AI Solutions', 'Leadership'],
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=400',
     isCEO: true,
     bio: 'Asad Ali founded NexaGrow with a vision to help businesses across the Arab world harness the power of digital marketing and AI. With over 10 years of experience in growth marketing, he has helped 100+ businesses scale their online presence.',
   },

@@ -41,18 +41,33 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const res = await fetch('/api/contact', {
+      // Build WhatsApp message with form details
+      const waNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '34632772477';
+      const message = [
+        '📩 *New Lead from NexaGrow Website*',
+        '',
+        `👤 *Name:* ${data.name}`,
+        `📧 *Email:* ${data.email}`,
+        data.phone ? `📱 *Phone:* ${data.phone}` : '',
+        `🎯 *Service:* ${data.service}`,
+        data.budget ? `💰 *Budget:* ${data.budget}` : '',
+        '',
+        `💬 *Message:*`,
+        data.message,
+      ].filter(Boolean).join('\n');
+
+      // Open WhatsApp with the message
+      window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`, '_blank');
+
+      // Also send to API as backup
+      fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
-      });
-      const result = await res.json();
-      if (result.success) {
-        setSubmitStatus('success');
-        reset();
-      } else {
-        setSubmitStatus('error');
-      }
+      }).catch(() => {});
+
+      setSubmitStatus('success');
+      reset();
     } catch {
       setSubmitStatus('error');
     }
@@ -151,7 +166,7 @@ export default function ContactPage() {
             <div className="p-6 rounded-xl bg-[var(--bg-card)] border border-[var(--border)] shadow-sm">
               <h3 className="font-semibold text-[var(--fg)] mb-4">Other Ways to Reach Us</h3>
               <div className="space-y-4">
-                <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[var(--fg)] hover:text-brand transition-colors">
+                <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi NexaGrow! 👋 I visited your website and I\'m interested in your services. Can we chat?')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[var(--fg)] hover:text-brand transition-colors">
                   <MessageCircle className="w-5 h-5 text-[#25D366]" />
                   <div>
                     <p className="font-medium">WhatsApp</p>
@@ -171,7 +186,7 @@ export default function ContactPage() {
             <div className="p-6 rounded-xl bg-brand text-white">
               <h3 className="font-semibold mb-2">Free Consultation</h3>
               <p className="text-sm text-white/80">Book a free 30-minute strategy call with our team.</p>
-              <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 px-6 py-2 bg-white text-brand font-semibold rounded-lg hover:bg-gray-100 transition-colors text-sm">
+              <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hi NexaGrow! 👋 I\'d like to book a free 30-minute strategy consultation for my business. When is a good time?')}`} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 px-6 py-2 bg-white text-brand font-semibold rounded-lg hover:bg-gray-100 transition-colors text-sm">
                 Book Now →
               </a>
             </div>

@@ -15,7 +15,7 @@ const markets = [
   {
     name: 'Saudi Arabia',
     desc: 'From Riyadh to Jeddah, we deliver growth strategies aligned with Vision 2030 and the booming Saudi digital economy.',
-    image: 'https://images.pexels.com/photos/4386442/pexels-photo-4386442.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/2797645/pexels-photo-2797645.jpeg?auto=compress&cs=tinysrgb&w=800',
     stats: [{ value: '30+', label: 'Campaigns' }, { value: '6x', label: 'Avg ROI' }],
   },
   {
@@ -27,7 +27,7 @@ const markets = [
   {
     name: 'Kuwait',
     desc: 'From healthcare to retail, we help Kuwaiti businesses build powerful online presence and drive measurable results.',
-    image: 'https://images.pexels.com/photos/3214982/pexels-photo-3214982.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=800',
     stats: [{ value: '10+', label: 'Brands' }, { value: '245%', label: 'Growth' }],
   },
   {
