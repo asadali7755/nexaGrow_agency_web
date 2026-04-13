@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const baseMeta = {
   siteName: 'NexaGrow Agency',
-  baseUrl: 'https://nexagrow.agency',
+  baseUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://markiting-services-web.vercel.app',
   defaultTitle: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
   defaultDescription:
     'Top digital marketing agency in UAE, Saudi Arabia, USA & Canada. Expert in social media marketing, SEO, Google Ads, AI automation, web development, and brand strategy.',

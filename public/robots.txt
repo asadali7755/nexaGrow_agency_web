@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nexagrow.agency/sitemap.xml
+Sitemap: https://markiting-services-web.vercel.app/sitemap.xml

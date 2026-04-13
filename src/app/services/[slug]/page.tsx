@@ -33,7 +33,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       data={{
         name: service.title,
         description: service.fullDesc,
-        provider: { '@type': 'Organization', name: 'NexaGrow Agency', url: 'https://nexagrow.agency' },
+        provider: { '@type': 'Organization', name: 'NexaGrow Agency', url: 'https://markiting-services-web.vercel.app' },
         areaServed: ['UAE', 'Saudi Arabia', 'USA', 'Canada', 'UK', 'Qatar', 'Kuwait'],
         serviceType: service.title,
       }}

@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nexagrow.agency'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://markiting-services-web.vercel.app'),
   title: {
     default: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
     template: '%s | NexaGrow Agency',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     'marketing agency Middle East', 'PPC management', 'lead generation',
     'WhatsApp automation', 'ecommerce marketing', 'NexaGrow Agency',
   ],
-  authors: [{ name: 'NexaGrow Agency', url: 'https://nexagrow.agency' }],
+  authors: [{ name: 'NexaGrow Agency', url: 'https://markiting-services-web.vercel.app' }],
   creator: 'NexaGrow Agency',
   publisher: 'NexaGrow Agency',
   robots: {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://nexagrow.agency',
+    url: 'https://markiting-services-web.vercel.app',
     siteName: 'NexaGrow Agency',
     title: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
     description:
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://nexagrow.agency',
+    canonical: 'https://markiting-services-web.vercel.app',
   },
   icons: {
     icon: '/favicon.ico',
