@@ -15,7 +15,7 @@ const markets = [
   {
     name: 'Saudi Arabia',
     desc: 'From Riyadh to Jeddah, we deliver growth strategies aligned with Vision 2030 and the booming Saudi digital economy.',
-    image: 'https://images.pexels.com/photos/2797645/pexels-photo-2797645.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/4614437/pexels-photo-4614437.jpeg?auto=compress&cs=tinysrgb&w=800',
     stats: [{ value: '30+', label: 'Campaigns' }, { value: '6x', label: 'Avg ROI' }],
   },
   {
