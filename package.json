@@ -1,0 +1,46 @@
+{
+  "name": "nexagrow-agency",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.x",
+    "clsx": "^2.x",
+    "framer-motion": "^11.x",
+    "lucide-react": "^0.400.x",
+    "next": "14.2.35",
+    "next-seo": "^6.x",
+    "next-sitemap": "^4.x",
+    "next-themes": "^0.3.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.x",
+    "resend": "^4.x",
+    "schema-dts": "^2.0.0",
+    "tailwind-merge": "^2.x",
+    "zod": "^3.x"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "jsdom": "^29.0.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4",
+    "typescript": "^5",
+    "vitest": "^4.1.4"
+  }
+}
