@@ -5,7 +5,14 @@ import Image from 'next/image';
 import SliderProgress from '@/components/shared/SliderProgress';
 import { images } from '@/lib/pexels';
 
-const slides = [
+type Slide = {
+  title: string;
+  subtitle: string;
+  image: string;
+  objectPosition?: string;
+};
+
+const slides: Slide[] = [
   {
     title: 'Digital Marketing That Drives Revenue',
     subtitle: 'We help businesses across the Arab world, USA and Canada scale with data-driven marketing strategies.',
@@ -30,6 +37,12 @@ const slides = [
     title: 'Your Growth Partner',
     subtitle: 'From strategy to execution — we are the team behind your digital success.',
     image: images.hero5,
+  },
+  {
+    title: 'Led by Vision, Driven by Results',
+    subtitle: 'Asad Ali, CEO & Founder of NexaGrow — 10+ years turning digital strategy into measurable growth for 100+ businesses across the Arab world, USA and Canada.',
+    image: images.hero6,
+    objectPosition: 'center 15%',
   },
 ];
 
@@ -67,7 +80,7 @@ export default function HeroSlider() {
             className="object-cover"
             priority={i === 0}
             sizes="100vw"
-            style={{ objectPosition: 'center' }}
+            style={{ objectPosition: slide.objectPosition ?? 'center' }}
           />
         </div>
       ))}

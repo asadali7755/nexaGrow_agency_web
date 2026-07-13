@@ -11,6 +11,7 @@ export const images = {
   hero3: `${IMG}/590020/pexels-photo-590020.jpeg${OPT}`,
   hero4: `${IMG}/1181472/pexels-photo-1181472.jpeg${OPT}`,
   hero5: `${IMG}/196644/pexels-photo-196644.jpeg${OPT}`,
+  hero6: '/asad-ali-ceo-founder.png',
 
   // About
   about: `${IMG}/3184360/pexels-photo-3184360.jpeg${OPT_SM}`,
@@ -30,7 +31,7 @@ export const images = {
   why4: `${IMG}/3182812/pexels-photo-3182812.jpeg${OPT_SM}`,
 
   // Team
-  asad: `${IMG}/927022/pexels-photo-927022.jpeg${OPT_SM}`,
+  asad: '/asad-ali-ceo-founder.png',
   james: `${IMG}/1043474/pexels-photo-1043474.jpeg${OPT_SM}`,
   omar: `${IMG}/3785079/pexels-photo-3785079.jpeg${OPT_SM}`,
   sarah: `${IMG}/774909/pexels-photo-774909.jpeg${OPT_SM}`,
