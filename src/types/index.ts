@@ -19,6 +19,16 @@ export interface Project {
   tags: string[];
 }
 
+export interface ServiceFaq {
+  q: string;
+  a: string;
+}
+
+export interface ServiceStep {
+  title: string;
+  desc: string;
+}
+
 export interface Service {
   slug: string;
   title: string;
@@ -29,6 +39,28 @@ export interface Service {
   slideThemeLight: string;
   slideThemeDark: string;
   keywords: string[];
+
+  // Deep-content fields. Service pages previously carried ~90 words each,
+  // far below what ranks for commercial queries. These sections give each
+  // page the substance Google and answer engines need to rank and cite it.
+  /** Search-friendly H1/title override, e.g. "Social Media Marketing Agency". */
+  seoTitle?: string;
+  /** Primary commercial keyword this page targets. */
+  primaryKeyword?: string;
+  /** 2-3 paragraph opening that answers "what is this and who is it for". */
+  intro?: string[];
+  /** Specific buyer profiles — helps intent matching and self-qualification. */
+  whoFor?: string[];
+  /** The delivery process, step by step. */
+  process?: ServiceStep[];
+  /** Concrete monthly deliverables. */
+  deliverables?: string[];
+  /** What results realistically look like and in what timeframe. */
+  outcomes?: string[];
+  /** Honest pricing guidance — a top conversion blocker when missing. */
+  pricingNote?: string;
+  /** Questions real buyers ask. Powers on-page FAQ + FAQPage schema. */
+  faqs?: ServiceFaq[];
 }
 
 export interface TeamMember {

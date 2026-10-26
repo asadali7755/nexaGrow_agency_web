@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://markiting-services-web.vercel.app',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://nexagrow.agency',
   generateRobotsTxt: true,
   exclude: ['/api/*'],
   robotsTxtOptions: {

@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import { Space_Grotesk, Syne } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
+import Script from 'next/script';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import { GA_MEASUREMENT_ID, SITE_NAME, SITE_URL } from '@/lib/site';
 import '@/styles/globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -28,7 +30,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://markiting-services-web.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
     template: '%s | NexaGrow Agency',
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     'marketing agency Middle East', 'PPC management', 'lead generation',
     'WhatsApp automation', 'ecommerce marketing', 'NexaGrow Agency',
   ],
-  authors: [{ name: 'NexaGrow Agency', url: 'https://markiting-services-web.vercel.app' }],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: 'NexaGrow Agency',
   publisher: 'NexaGrow Agency',
   verification: {
@@ -62,14 +64,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://markiting-services-web.vercel.app',
-    siteName: 'NexaGrow Agency',
+    url: SITE_URL,
+    siteName: SITE_NAME,
     title: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
     description:
       'Top digital marketing agency helping businesses across UAE, Saudi Arabia, USA & Canada grow with data-driven marketing, AI automation, and web development.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/api/og',
         width: 1200,
         height: 630,
         alt: 'NexaGrow Agency — Digital Marketing & AI Solutions',
@@ -81,14 +83,16 @@ export const metadata: Metadata = {
     title: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
     description:
       'Top digital marketing agency helping businesses grow with data-driven strategies.',
-    images: ['/og-image.jpg'],
+    images: ['/api/og'],
   },
   alternates: {
-    canonical: 'https://markiting-services-web.vercel.app',
+    canonical: SITE_URL,
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    shortcut: ['/favicon.svg'],
   },
+  manifest: '/site.webmanifest',
   category: 'technology',
 };
 
@@ -106,6 +110,22 @@ export default function RootLayout({
           <Footer />
           <WhatsAppButton />
         </ThemeProvider>
+
+        {/* GA4 — without this there is no way to see traffic, sources or conversions. */}
+        {GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}');`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

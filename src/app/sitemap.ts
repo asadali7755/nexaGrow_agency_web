@@ -3,7 +3,7 @@ import { projects } from '@/lib/projects';
 import { services } from '@/lib/services';
 import { blogPosts } from '@/lib/blog';
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://markiting-services-web.vercel.app';
+import { SITE_URL as baseUrl } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages

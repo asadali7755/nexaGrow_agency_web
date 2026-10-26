@@ -15,6 +15,7 @@ export default function TeamPage() {
     <section className="pt-24 pb-20 lg:py-28 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
+          as="h1"
           label="Our Team"
           title="The People Behind Your Success"
           subtitle="A global team of experts with diverse skills and perspectives, united by one goal — your growth."

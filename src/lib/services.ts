@@ -1,7 +1,8 @@
 // lib/services.ts — 6 agency services
 import type { Service } from '@/types';
+import { serviceContent } from '@/lib/services-content';
 
-export const services: Service[] = [
+const baseServices: Service[] = [
   {
     slug: 'social-media-marketing',
     title: 'Social Media Marketing',
@@ -99,3 +100,13 @@ export const services: Service[] = [
     keywords: ['Content', 'Photography', 'Video', 'Copywriting', 'Design'],
   },
 ];
+
+/**
+ * Card/slider metadata merged with the long-form page content. Keeping the two
+ * sources separate means the homepage sliders stay lightweight while the
+ * detail pages get the depth they need to rank.
+ */
+export const services: Service[] = baseServices.map((service) => ({
+  ...service,
+  ...(serviceContent[service.slug] ?? {}),
+}));

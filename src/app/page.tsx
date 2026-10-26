@@ -2,6 +2,15 @@ import dynamic from 'next/dynamic';
 import HeroSlider from '@/components/home/HeroSlider';
 import Marquee from '@/components/home/Marquee';
 import JsonLd from '@/components/seo/JsonLd';
+import { services } from '@/lib/services';
+import {
+  CONTACT_EMAIL,
+  SITE_NAME,
+  SITE_URL,
+  SOCIAL_PROFILES,
+  absoluteUrl,
+  whatsappNumber,
+} from '@/lib/site';
 
 // Lazy load below-fold sections for faster initial page load
 const AboutSection = dynamic(() => import('@/components/home/AboutSection'));
@@ -18,64 +27,70 @@ const CTASection = dynamic(() => import('@/components/home/CTASection'));
 export default function Home() {
   return (
     <>
-      {/* JSON-LD Organization + LocalBusiness Schema */}
+      {/*
+        Organization + WebSite schema.
+        Deliberately omits aggregateRating: there are no verifiable published
+        reviews on the site, and self-serving review markup is a Google
+        structured-data violation that risks a manual action. Re-add it only
+        once real, visible reviews exist on the page.
+      */}
       <JsonLd
         type="custom"
         data={{
           '@context': 'https://schema.org',
-          '@type': 'ProfessionalService',
-          name: 'NexaGrow Agency',
-          url: 'https://markiting-services-web.vercel.app',
-          logo: 'https://markiting-services-web.vercel.app/logo.svg',
-          image: 'https://markiting-services-web.vercel.app/og-image.jpg',
-          description: 'Top digital marketing agency specializing in social media marketing, SEO, Google Ads, AI automation, and web development for businesses in UAE, Saudi Arabia, USA, and Canada.',
-          telephone: `+${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`,
-          email: 'leoali851@gmail.com',
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: 'Dubai',
-            addressCountry: 'AE',
-          },
-          geo: {
-            '@type': 'GeoCoordinates',
-            latitude: 25.2048,
-            longitude: 55.2708,
-          },
-          areaServed: [
-            { '@type': 'Country', name: 'United Arab Emirates' },
-            { '@type': 'Country', name: 'Saudi Arabia' },
-            { '@type': 'Country', name: 'United States' },
-            { '@type': 'Country', name: 'Canada' },
-            { '@type': 'Country', name: 'United Kingdom' },
-            { '@type': 'Country', name: 'Qatar' },
-            { '@type': 'Country', name: 'Kuwait' },
+          '@graph': [
+            {
+              '@type': 'ProfessionalService',
+              '@id': `${SITE_URL}/#organization`,
+              name: SITE_NAME,
+              url: SITE_URL,
+              logo: absoluteUrl('/logo.svg'),
+              image: absoluteUrl('/api/og'),
+              description:
+                'Digital marketing agency specialising in social media marketing, SEO, Google Ads, AI automation and web development for businesses in the UAE, Saudi Arabia, USA and Canada.',
+              ...(whatsappNumber() ? { telephone: `+${whatsappNumber()}` } : {}),
+              email: CONTACT_EMAIL,
+              founder: {
+                '@type': 'Person',
+                name: 'Asad Ali',
+                jobTitle: 'CEO & Founder',
+              },
+              areaServed: [
+                'United Arab Emirates',
+                'Saudi Arabia',
+                'Qatar',
+                'Kuwait',
+                'United States',
+                'Canada',
+                'United Kingdom',
+                'Pakistan',
+              ].map((name) => ({ '@type': 'Country', name })),
+              availableLanguage: ['English', 'Urdu', 'Arabic'],
+              sameAs: SOCIAL_PROFILES,
+              priceRange: '$$',
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Digital Marketing Services',
+                itemListElement: services.map((s) => ({
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Service',
+                    name: s.title,
+                    description: s.shortDesc,
+                    url: absoluteUrl(`/services/${s.slug}`),
+                  },
+                })),
+              },
+            },
+            {
+              '@type': 'WebSite',
+              '@id': `${SITE_URL}/#website`,
+              url: SITE_URL,
+              name: SITE_NAME,
+              publisher: { '@id': `${SITE_URL}/#organization` },
+              inLanguage: 'en',
+            },
           ],
-          sameAs: [],
-          priceRange: '$$',
-          openingHoursSpecification: {
-            '@type': 'OpeningHoursSpecification',
-            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-            opens: '09:00',
-            closes: '18:00',
-          },
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '4.9',
-            reviewCount: '50',
-            bestRating: '5',
-          },
-          hasOfferCatalog: {
-            '@type': 'OfferCatalog',
-            name: 'Digital Marketing Services',
-            itemListElement: [
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Social Media Marketing' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Automation' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web Development' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Google Ads Management' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Brand Strategy' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Content Creation' } },
-            ],
-          },
         }}
       />
 

@@ -1,14 +1,24 @@
 // lib/seo.ts — SEO metadata helpers and base configuration
 import type { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/site';
 
 export const baseMeta = {
-  siteName: 'NexaGrow Agency',
-  baseUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://markiting-services-web.vercel.app',
+  siteName: SITE_NAME,
+  baseUrl: SITE_URL,
   defaultTitle: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
   defaultDescription:
     'Top digital marketing agency in UAE, Saudi Arabia, USA & Canada. Expert in social media marketing, SEO, Google Ads, AI automation, web development, and brand strategy.',
-  defaultImage: '/og-image.jpg',
+  defaultImage: '/api/og',
 };
+
+/** Share card rendered on demand by /api/og, so it always matches the page. */
+function ogImageFor(title: string, description: string): string {
+  const params = new URLSearchParams({
+    title,
+    subtitle: description.slice(0, 140),
+  });
+  return `${SITE_URL}/api/og?${params.toString()}`;
+}
 
 export function generateMeta(page: {
   title: string;
@@ -18,7 +28,7 @@ export function generateMeta(page: {
   keywords?: string[];
 }): Metadata {
   const url = page.slug ? `${baseMeta.baseUrl}/${page.slug}` : baseMeta.baseUrl;
-  const image = page.image || baseMeta.defaultImage;
+  const image = page.image || ogImageFor(page.title, page.description);
 
   return {
     title: page.title,

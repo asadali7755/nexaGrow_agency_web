@@ -49,10 +49,22 @@ const slides: Slide[] = [
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  // Slides that have been reached. All six <Image> elements sit in the
+  // viewport at opacity 0, so rendering them up front made the browser
+  // download every hero image on first paint and pushed out LCP.
+  // We mount a slide's image only once it is about to be shown.
+  const [mounted, setMounted] = useState<number[]>([0, 1]);
   const interval = 4000;
 
   const nextSlide = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % slides.length);
+    setCurrent((prev) => {
+      const next = (prev + 1) % slides.length;
+      const prefetch = (next + 1) % slides.length;
+      setMounted((seen) =>
+        seen.includes(prefetch) ? seen : [...seen, prefetch]
+      );
+      return next;
+    });
   }, []);
 
   useEffect(() => {
@@ -73,15 +85,18 @@ export default function HeroSlider() {
             zIndex: i === current ? 1 : 0,
           }}
         >
-          <Image
-            src={slide.image}
-            alt=""
-            fill
-            className="object-cover"
-            priority={i === 0}
-            sizes="100vw"
-            style={{ objectPosition: slide.objectPosition ?? 'center' }}
-          />
+          {mounted.includes(i) && (
+            <Image
+              src={slide.image}
+              alt={i === current ? slide.title : ''}
+              fill
+              className="object-cover"
+              priority={i === 0}
+              quality={i === 0 ? 85 : 70}
+              sizes="100vw"
+              style={{ objectPosition: slide.objectPosition ?? 'center' }}
+            />
+          )}
         </div>
       ))}
 

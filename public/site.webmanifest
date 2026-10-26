@@ -1,0 +1,17 @@
+{
+  "name": "NexaGrow Agency",
+  "short_name": "NexaGrow",
+  "description": "Digital marketing, AI automation and web development agency.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F2ED",
+  "theme_color": "#C8102E",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

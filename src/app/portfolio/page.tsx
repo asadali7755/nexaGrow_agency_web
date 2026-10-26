@@ -22,6 +22,7 @@ export default function PortfolioPage() {
       <section className="pt-24 pb-20 lg:py-28 bg-[var(--bg)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
+          as="h1"
             label="Our Projects"
             title="Real Results, Real Clients"
             subtitle="Browse our case studies and see how we have helped businesses achieve measurable growth."
