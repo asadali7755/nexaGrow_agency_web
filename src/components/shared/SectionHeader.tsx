@@ -4,6 +4,12 @@ interface SectionHeaderProps {
   subtitle?: string;
   align?: 'left' | 'center';
   light?: boolean;
+  /**
+   * Heading level. Listing pages (/services, /portfolio, /blog, /team, /about,
+   * /contact) must pass "h1" — they previously rendered only h2s, leaving each
+   * page without the single H1 Google uses to read the page topic.
+   */
+  as?: 'h1' | 'h2';
 }
 
 export default function SectionHeader({
@@ -12,6 +18,7 @@ export default function SectionHeader({
   subtitle,
   align = 'center',
   light = false,
+  as: Heading = 'h2',
 }: SectionHeaderProps) {
   const textAlign = align === 'center' ? 'text-center' : 'text-left';
   const titleColor = light ? 'text-white' : 'text-[var(--fg)]';
@@ -24,9 +31,9 @@ export default function SectionHeader({
           {label}
         </span>
       )}
-      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold ${titleColor} font-display`}>
+      <Heading className={`text-3xl md:text-4xl lg:text-5xl font-bold ${titleColor} font-display`}>
         {title}
-      </h2>
+      </Heading>
       {subtitle && (
         <p className={`mt-4 text-lg max-w-2xl mx-auto ${subtitleColor}`}>
           {subtitle}

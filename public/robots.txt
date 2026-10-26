@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://markiting-services-web.vercel.app/sitemap.xml

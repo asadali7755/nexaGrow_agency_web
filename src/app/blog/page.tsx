@@ -20,6 +20,7 @@ export default function BlogPage() {
     <section className="pt-24 pb-20 lg:py-28 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
+          as="h1"
           label="Blog"
           title="Insights & Strategies"
           subtitle="Expert tips, industry trends, and actionable advice to help you grow your business."

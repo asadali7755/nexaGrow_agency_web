@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Logo from '@/components/shared/Logo';
 import { Mail } from 'lucide-react';
+import { CONTACT_EMAIL, whatsappLink } from '@/lib/site';
 
 const services = [
   { label: 'Social Media Marketing', slug: 'social-media-marketing' },
@@ -27,6 +28,8 @@ const markets = [
 
 
 export default function Footer() {
+  const footerWhatsApp = whatsappLink('Hi NexaGrow! 👋 I found you through your website.');
+
   return (
     <footer className="relative always-black">
       {/* Background Image with Overlay */}
@@ -83,16 +86,18 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:leoali851@gmail.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
                   <Mail className="w-4 h-4" />
-                  leoali851@gmail.com
+                  {CONTACT_EMAIL}
                 </a>
               </li>
-              <li>
-                <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
-                  WhatsApp
-                </a>
-              </li>
+              {footerWhatsApp && (
+                <li>
+                  <a href={footerWhatsApp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm">
+                    WhatsApp
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>

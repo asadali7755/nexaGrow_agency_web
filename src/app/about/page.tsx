@@ -20,6 +20,7 @@ export default function AboutPage() {
     <section className="pt-24 pb-20 lg:py-28 bg-[var(--bg)]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
+          as="h1"
           label="About NexaGrow"
           title="Our Story"
           subtitle="From a one-person consultancy to a global digital marketing agency."

@@ -16,6 +16,7 @@ export default function ServicesPage() {
     <section className="pt-24 pb-20 lg:py-28 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
+          as="h1"
           label="Our Services"
           title="Everything You Need to Grow Online"
           subtitle="From strategy to execution — comprehensive digital marketing solutions tailored to your business."
