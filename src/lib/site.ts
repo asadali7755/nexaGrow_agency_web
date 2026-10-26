@@ -2,21 +2,41 @@
 // Everything SEO-related (metadata, sitemap, robots, JSON-LD) reads from here so the
 // site can never again ship with a half-updated domain or a dead contact link.
 
-/** Production domain. Override per-environment with NEXT_PUBLIC_SITE_URL. */
+/**
+ * Canonical origin for metadata, canonicals, sitemap.xml, robots.txt and JSON-LD.
+ *
+ * The fallback MUST be a host that actually resolves. nexagrow.agency is not
+ * registered at the time of writing (DNS returns NXDOMAIN), and pointing
+ * canonical tags at a dead host would tell Google to drop the live pages from
+ * its index — worse than the problem it was meant to fix.
+ *
+ * Once the real domain is registered and attached in Vercel, set
+ * NEXT_PUBLIC_SITE_URL to it and every URL on the site follows automatically.
+ */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://nexagrow.agency'
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://markiting-services-web.vercel.app'
 ).replace(/\/$/, '');
 
 export const SITE_NAME = 'NexaGrow Agency';
 export const SITE_LEGAL_NAME = 'NexaGrow Agency';
 
-/** Inbox that receives website leads. */
+/**
+ * Inbox shown publicly and used as the lead destination.
+ * Falls back to the address that actually receives mail today — publishing
+ * hello@nexagrow.agency before that domain exists would bounce every reply.
+ */
 export const CONTACT_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@nexagrow.agency';
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'leoali851@gmail.com';
 
-/** Verified Resend sender. Must be on a domain verified in Resend, not a free inbox. */
+/**
+ * Resend sender. Must be a domain verified in Resend — a free inbox such as
+ * gmail.com is rejected, which is what silently swallowed every lead before.
+ * Defaults to Resend's shared test sender so the form works the moment an API
+ * key is added, with no custom domain required. Switch to leads@<your-domain>
+ * once the domain is verified in Resend.
+ */
 export const LEADS_FROM_EMAIL =
-  process.env.LEADS_FROM_EMAIL || 'NexaGrow Website <leads@nexagrow.agency>';
+  process.env.LEADS_FROM_EMAIL || 'NexaGrow Website <onboarding@resend.dev>';
 
 /**
  * WhatsApp number in wa.me format: country code + number, no "+" and no spaces.

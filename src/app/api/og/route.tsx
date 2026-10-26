@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { SITE_URL } from '@/lib/site';
 
 export const runtime = 'edge';
 
@@ -74,7 +75,7 @@ export async function GET(request: Request) {
         {/* Accent bar */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
           <div style={{ width: 120, height: 8, borderRadius: 999, backgroundColor: '#C8102E' }} />
-          <div style={{ fontSize: 26, color: '#8A857E' }}>nexagrow.agency</div>
+          <div style={{ fontSize: 26, color: '#8A857E' }}>{new URL(SITE_URL).host}</div>
         </div>
       </div>
     ),
