@@ -41,7 +41,7 @@ export default function FounderSection() {
               Driven by Results, Inspired by Growth
             </h2>
             <p className="mt-6 text-gray-300 text-lg leading-relaxed">
-              Asad Ali founded NexaGrow to help businesses across the Gulf, Pakistan and North America get measurable results from digital marketing instead of vanity metrics. He works hands-on with every client on strategy, campaigns and AI automation.
+              Asad Ali founded NexaGrow to help businesses across the Gulf, Pakistan and beyond get measurable results from digital marketing instead of vanity metrics. He works hands-on with every client on strategy, campaigns and AI automation.
             </p>
             <p className="mt-4 text-gray-400 leading-relaxed">
               The agency is deliberately small, which means the person who plans your campaign is the person who runs it — no account-manager layer between you and the work.

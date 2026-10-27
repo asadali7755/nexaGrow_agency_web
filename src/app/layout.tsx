@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: '%s | NexaGrow Agency',
   },
   description:
-    'NexaGrow is a top digital marketing agency in UAE, Saudi Arabia, USA & Canada. We specialize in social media marketing, SEO, Google Ads, AI automation, web development, and brand strategy to grow your business online.',
+    'NexaGrow is a digital marketing and web development agency serving the UAE, Saudi Arabia, USA & Canada. We specialize in social media marketing, SEO, Google Ads, AI automation, web development, and brand strategy to grow your business online.',
   keywords: [
     'digital marketing agency', 'digital marketing UAE', 'social media marketing Dubai',
     'SEO agency Saudi Arabia', 'Google Ads management', 'AI automation business',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
     description:
-      'Top digital marketing agency helping businesses across UAE, Saudi Arabia, USA & Canada grow with data-driven marketing, AI automation, and web development.',
+      'Founder-led digital marketing agency helping businesses across UAE, Saudi Arabia, USA & Canada grow with data-driven marketing, AI automation, and web development.',
     images: [
       {
         url: '/api/og',
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
     description:
-      'Top digital marketing agency helping businesses grow with data-driven strategies.',
+      'Founder-led digital marketing agency helping businesses grow with data-driven strategies.',
     images: ['/api/og'],
   },
   alternates: {

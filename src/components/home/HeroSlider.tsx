@@ -15,12 +15,12 @@ type Slide = {
 const slides: Slide[] = [
   {
     title: 'Digital Marketing That Drives Revenue',
-    subtitle: 'We help businesses across the Arab world, USA and Canada scale with data-driven marketing strategies.',
+    subtitle: 'We help service businesses in the UAE, the Gulf and Pakistan get found on Google and turn visitors into enquiries.',
     image: images.hero1,
   },
   {
     title: 'AI-Powered Automation',
-    subtitle: 'Save 20+ hours per week with intelligent WhatsApp bots and CRM automation.',
+    subtitle: 'WhatsApp agents, chatbots and CRM automation that answer every enquiry, even the ones that arrive at midnight.',
     image: images.hero2,
   },
   {
@@ -35,12 +35,12 @@ const slides: Slide[] = [
   },
   {
     title: 'Your Growth Partner',
-    subtitle: 'From strategy to execution — we are the team behind your digital success.',
+    subtitle: 'From strategy to execution, one accountable founder does the work, start to finish.',
     image: images.hero5,
   },
   {
     title: 'Led by Vision, Driven by Results',
-    subtitle: 'Asad Ali, CEO & Founder of NexaGrow — 10+ years turning digital strategy into measurable growth for 100+ businesses across the Arab world, USA and Canada.',
+    subtitle: 'Asad Ali, CEO & Founder of NexaGrow, builds the websites, runs the SEO and creates the AI agents himself. His work took MarblePro to page one of Google for marble polishing in Dubai.',
     image: images.hero6,
     objectPosition: 'center 15%',
   },

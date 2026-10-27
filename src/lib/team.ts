@@ -17,7 +17,7 @@ export const teamMembers: TeamMember[] = [
     skills: ['Digital Strategy', 'Growth Marketing', 'AI Solutions', 'Leadership'],
     image: '/asad-ali-ceo-founder.png',
     isCEO: true,
-    bio: 'Asad Ali founded NexaGrow to help businesses in the Gulf, Pakistan and North America get measurable results from digital marketing. He works hands-on with every client on strategy, SEO, paid campaigns and AI automation — if you hire NexaGrow, he is the person doing the work, not a sales contact who hands you over.',
+    bio: 'Asad Ali founded NexaGrow to help businesses in the Gulf, Pakistan and beyond get measurable results from digital marketing. He works hands-on with every client on strategy, SEO, paid campaigns and AI automation — if you hire NexaGrow, he is the person doing the work, not a sales contact who hands you over.',
   },
 ];
 

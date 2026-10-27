@@ -23,7 +23,7 @@ export default function AboutPage() {
           as="h1"
           label="About NexaGrow"
           title="Our Story"
-          subtitle="From a one-person consultancy to a global digital marketing agency."
+          subtitle="A founder-led studio for websites, marketing and AI automation."
           align="center"
         />
 
@@ -32,10 +32,10 @@ export default function AboutPage() {
             NexaGrow was founded by Asad Ali with a simple but powerful vision: to help businesses across the Arab world, USA, and Canada unlock the full potential of digital marketing.
           </p>
           <p className="text-lg leading-relaxed">
-            What started as a freelance consulting practice grew into a full-service agency with a small, senior team. We work with businesses in the Gulf, Pakistan and North America, combining local market insight with global best practices — and we take on fewer clients than we could so each one gets real attention.
+            NexaGrow is founder-led. Asad Ali does the strategy, writes the code and runs the campaigns himself, so you always deal with the person doing the work. Current clients are in the UAE and Pakistan, and every project is built to serve customers anywhere — and we take on fewer clients than we could so each one gets real attention.
           </p>
           <p className="text-lg leading-relaxed">
-            Today, NexaGrow offers comprehensive services including social media marketing, AI automation, web development, Google Ads management, brand strategy, and content creation — all delivered by a team that is passionate about results.
+            Today, NexaGrow offers comprehensive services including social media marketing, AI automation, web development, Google Ads management, brand strategy, and content creation — plus custom web apps, internal tools and AI agents, all delivered by the founder personally.
           </p>
         </div>
 

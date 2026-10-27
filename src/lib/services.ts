@@ -23,7 +23,7 @@ const baseServices: Service[] = [
     slug: 'ai-automation',
     title: 'AI Automation',
     shortDesc: 'Automate repetitive tasks and scale your operations with AI-powered solutions.',
-    fullDesc: 'From WhatsApp AI agents that qualify leads 24/7 to automated email sequences and CRM workflows — we help you work smarter, not harder. Our AI solutions save businesses 20+ hours per week while improving response times and conversion rates.',
+    fullDesc: 'From WhatsApp AI agents that qualify leads 24/7 to automated email sequences and CRM workflows — we help you work smarter, not harder. The goal is simple: no enquiry goes unanswered, and your team stops doing the same manual steps every day.',
     features: [
       'AI WhatsApp chatbots for lead qualification',
       'CRM automation & pipeline management',

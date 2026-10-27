@@ -7,7 +7,7 @@ export const baseMeta = {
   baseUrl: SITE_URL,
   defaultTitle: 'NexaGrow Agency — Digital Marketing, AI & Web Development',
   defaultDescription:
-    'Top digital marketing agency in UAE, Saudi Arabia, USA & Canada. Expert in social media marketing, SEO, Google Ads, AI automation, web development, and brand strategy.',
+    'Founder-led digital marketing and web development agency serving the UAE, Saudi Arabia, USA & Canada. Expert in social media marketing, SEO, Google Ads, AI automation, web development, and brand strategy.',
   defaultImage: '/api/og',
 };
 
