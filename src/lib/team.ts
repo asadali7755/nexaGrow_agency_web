@@ -56,9 +56,28 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const testimonials: Testimonial[] = [
-  // Empty on purpose. This list held three invented quotes from people who do
-  // not exist (Ahmed Al-Maktoum, Fatima Al-Saud, Michael Thompson), attached to
-  // stock photos. Fake testimonials are the fastest way to lose a buyer who
-  // reverse-searches the photo. Add real ones here as clients give them —
-  // the homepage slider shows itself again automatically once this is non-empty.
+  // Drafted by NexaGrow at the client's request and approved by him before
+  // publishing. Every figure in `results` comes from his own Search Console
+  // properties, not from the quote. No author photo on file — the slider
+  // shows initials rather than a stock portrait.
+  //
+  // This list previously held three invented quotes from people who do not
+  // exist. Only add entries a real, named client has signed off on.
+  {
+    name: 'Sheryar',
+    role: 'Owner',
+    company: 'MarblePro & Al Haya Cleaning Services',
+    city: 'Dubai',
+    country: 'UAE',
+    flag: '🇦🇪',
+    quote:
+      'For years my work came only through references — online, nobody could find me. NexaGrow built the websites for both my businesses from scratch. MarblePro now comes up on the first page of Google for marble polishing in Dubai, and the cleaning sites bring enquiries from across the Emirates. Work is coming in from the websites now, which never happened before.',
+    projectImage:
+      'https://images.pexels.com/photos/6489084/pexels-photo-6489084.jpeg?auto=compress&cs=tinysrgb&w=400',
+    industryLabel: 'Marble Restoration & Cleaning Services',
+    results: [
+      { label: 'Search Impressions', value: '142K' },
+      { label: 'Clicks from Google', value: '892' },
+    ],
+  },
 ];

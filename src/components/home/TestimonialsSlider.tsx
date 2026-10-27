@@ -64,7 +64,18 @@ export default function TestimonialsSlider() {
           {/* Author */}
           <div className="mt-8 flex items-center justify-center gap-4">
             <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-white/30">
-              <Image src={t.image} alt={t.name} fill className="object-cover" sizes="56px" />
+              {t.image ? (
+                <Image src={t.image} alt={t.name} fill className="object-cover" sizes="56px" />
+              ) : (
+                // No photo on file. Initials are honest; a stock portrait is not.
+                <span className="w-full h-full flex items-center justify-center bg-white/15 text-white font-semibold text-lg">
+                  {t.name
+                    .split(' ')
+                    .map((part) => part[0])
+                    .slice(0, 2)
+                    .join('')}
+                </span>
+              )}
             </div>
             <div className="text-left">
               <p className="font-semibold text-white">{t.name}</p>

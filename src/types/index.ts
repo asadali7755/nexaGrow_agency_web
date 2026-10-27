@@ -82,7 +82,9 @@ export interface Testimonial {
   country: string;
   flag: string;
   quote: string;
-  image: string;
+  /** Author photo. Omit it rather than substituting a stock portrait —
+   *  the slider falls back to the author's initials. */
+  image?: string;
   projectImage: string;
   industryLabel: string;
   results: { label: string; value: string }[];
