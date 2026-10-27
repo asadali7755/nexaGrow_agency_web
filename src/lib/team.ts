@@ -3,6 +3,12 @@ import type { TeamMember, Testimonial } from '@/types';
 
 
 export const teamMembers: TeamMember[] = [
+  // Only real people belong here. Five invented colleagues (James Mitchell,
+  // Omar Hassan, Sarah Chen, Riya Patel, Khalid Al-Rashid) used to sit below,
+  // each on a stock photo — and one of those photos was also in use as a
+  // client testimonial, so the same face appeared as both a US creative
+  // director and a Riyadh marketing director. Add contractors or hires here
+  // only with their own name and their own photo.
   {
     name: 'Asad Ali',
     role: 'Founder & CEO',
@@ -11,47 +17,7 @@ export const teamMembers: TeamMember[] = [
     skills: ['Digital Strategy', 'Growth Marketing', 'AI Solutions', 'Leadership'],
     image: '/asad-ali-ceo-founder.png',
     isCEO: true,
-    bio: 'Asad Ali founded NexaGrow with a vision to help businesses across the Arab world harness the power of digital marketing and AI. With over 10 years of experience in growth marketing, he has helped 100+ businesses scale their online presence.',
-  },
-  {
-    name: 'James Mitchell',
-    role: 'Head of Paid Media',
-    origin: 'Canada',
-    flag: '🇨🇦',
-    skills: ['Google Ads', 'Meta Ads', 'Analytics', 'CRO'],
-    image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400',
-  },
-  {
-    name: 'Omar Hassan',
-    role: 'SEO Strategist',
-    origin: 'Egypt',
-    flag: '🇪🇬',
-    skills: ['Technical SEO', 'Content Strategy', 'Link Building', 'Analytics'],
-    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400',
-  },
-  {
-    name: 'Sarah Chen',
-    role: 'Creative Director',
-    origin: 'USA',
-    flag: '🇺🇸',
-    skills: ['Brand Design', 'UI/UX', 'Video Production', 'Art Direction'],
-    image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400',
-  },
-  {
-    name: 'Riya Patel',
-    role: 'Social Media Manager',
-    origin: 'India',
-    flag: '🇮🇳',
-    skills: ['Content Creation', 'Community Management', 'Influencer Outreach', 'Analytics'],
-    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
-  },
-  {
-    name: 'Khalid Al-Rashid',
-    role: 'AI Automation Engineer',
-    origin: 'Saudi Arabia',
-    flag: '🇸🇦',
-    skills: ['AI Chatbots', 'Workflow Automation', 'API Integration', 'Python'],
-    image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400',
+    bio: 'Asad Ali founded NexaGrow to help businesses in the Gulf, Pakistan and North America get measurable results from digital marketing. He works hands-on with every client on strategy, SEO, paid campaigns and AI automation — if you hire NexaGrow, he is the person doing the work, not a sales contact who hands you over.',
   },
 ];
 

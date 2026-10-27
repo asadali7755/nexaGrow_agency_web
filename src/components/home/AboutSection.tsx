@@ -16,8 +16,8 @@ const infoBoxes = [
   },
   {
     icon: Users,
-    title: 'Global Team',
-    desc: 'Our diverse team brings perspectives from 6+ countries and 10+ industries.',
+    title: 'You Work With the Owner',
+    desc: 'No account managers in between. The person who plans your campaign is the person who runs it.',
   },
 ];
 

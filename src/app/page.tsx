@@ -17,7 +17,6 @@ const AboutSection = dynamic(() => import('@/components/home/AboutSection'));
 const ServicesSlider = dynamic(() => import('@/components/home/ServicesSlider'));
 const MarketsSection = dynamic(() => import('@/components/home/MarketsSection'));
 const PortfolioSection = dynamic(() => import('@/components/home/PortfolioSection'));
-const TeamSection = dynamic(() => import('@/components/home/TeamSection'));
 const FounderSection = dynamic(() => import('@/components/home/FounderSection'));
 const WhySlider = dynamic(() => import('@/components/home/WhySlider'));
 const TestimonialsSlider = dynamic(() => import('@/components/home/TestimonialsSlider'));
@@ -101,7 +100,6 @@ export default function Home() {
       <ServicesSlider />
       <MarketsSection />
       <PortfolioSection />
-      <TeamSection />
       <FounderSection />
       <WhySlider />
       <TestimonialsSlider />

@@ -4,8 +4,8 @@ import { teamMembers } from '@/lib/team';
 import { generateMeta } from '@/lib/seo';
 
 export const metadata = generateMeta({
-  title: 'Team — Meet Our Digital Marketing Experts',
-  description: 'Meet the NexaGrow team — expert digital marketers, web developers, and AI engineers from 6+ countries helping businesses grow across UAE, Saudi Arabia, USA, and Canada.',
+  title: 'Team — Who You Actually Work With',
+  description: 'NexaGrow is a small, hands-on agency. Meet Asad Ali, the founder who plans and runs the work on every account — strategy, SEO, paid campaigns and AI automation.',
   slug: 'team',
   keywords: ['NexaGrow team', 'digital marketing experts', 'marketing team Dubai', 'agency team'],
 });
@@ -17,11 +17,11 @@ export default function TeamPage() {
         <SectionHeader
           as="h1"
           label="Our Team"
-          title="The People Behind Your Success"
-          subtitle="A global team of experts with diverse skills and perspectives, united by one goal — your growth."
+          title="Who You Actually Work With"
+          subtitle="NexaGrow is deliberately small. The person who plans your campaign is the person who runs it, and specialists are brought in per project when the work calls for it."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-sm mx-auto sm:max-w-none sm:mx-0 sm:justify-items-center lg:justify-items-start">
           {teamMembers.map((member) => (
             <TeamCard key={member.name} member={member} />
           ))}
