@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   creator: 'NexaGrow Agency',
   publisher: 'NexaGrow Agency',
   verification: {
-    google: '2mXFaag5G1fFLK_0DKABuHlB2CXFQyqPT6hfzNYFae0',
+    google: 'zA0DOpdN1sB22fHqxTqQe02_1Oaw6gCC32PUIzD3KS0',
   },
   robots: {
     index: true,
