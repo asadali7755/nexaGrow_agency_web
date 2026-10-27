@@ -22,6 +22,7 @@ const WhySlider = dynamic(() => import('@/components/home/WhySlider'));
 const TestimonialsSlider = dynamic(() => import('@/components/home/TestimonialsSlider'));
 const BlogSection = dynamic(() => import('@/components/home/BlogSection'));
 const CTASection = dynamic(() => import('@/components/home/CTASection'));
+const ProjectBrief = dynamic(() => import('@/components/home/ProjectBrief'));
 
 export default function Home() {
   return (
@@ -104,6 +105,7 @@ export default function Home() {
       <WhySlider />
       <TestimonialsSlider />
       <BlogSection />
+      <ProjectBrief />
       <CTASection />
     </>
   );

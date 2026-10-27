@@ -110,35 +110,49 @@ export default function PortfolioPage() {
             {builds.map((b) => (
               <article
                 key={b.name}
-                className="flex flex-col gap-4 p-6 rounded-2xl bg-[var(--bg)] border border-[var(--border)]"
+                className="group relative isolate flex min-h-[26rem] flex-col justify-end overflow-hidden rounded-2xl border border-[var(--border)] p-6 shadow-lg"
               >
-                <span className="self-start px-3 py-1 bg-brand/10 text-brand text-xs font-semibold rounded-full">
+                <Image
+                  src={b.image}
+                  alt=""
+                  fill
+                  className="-z-20 object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                {/* Dark gradient keeps white text readable on any photo, in both themes. */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 -z-10 bg-gradient-to-t from-black/95 via-black/75 to-black/25"
+                />
+                <span className="self-start px-3 py-1 bg-brand text-white text-xs font-semibold rounded-full">
                   {b.kind}
                 </span>
-                <h3 className="text-xl font-bold text-[var(--fg)] font-display">{b.name}</h3>
-                <p className="text-sm text-[var(--fg-muted)] leading-relaxed flex-1">{b.summary}</p>
-                <ul className="flex flex-wrap gap-2" aria-label={`${b.name} technology`}>
+                <h3 className="mt-4 text-xl font-bold text-white font-display">{b.name}</h3>
+                <p className="mt-2 text-sm text-white/85 leading-relaxed">{b.summary}</p>
+                <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${b.name} technology`}>
                   {b.stack.map((t) => (
                     <li
                       key={t}
-                      className="px-2.5 py-1 text-xs rounded-full bg-[var(--bg-card)] border border-[var(--border)] text-[var(--fg-muted)]"
+                      className="px-2.5 py-1 text-xs rounded-full bg-white/10 border border-white/25 text-white/90 backdrop-blur-sm"
                     >
                       {t}
                     </li>
                   ))}
                 </ul>
-                {b.link ? (
-                  <a
-                    href={b.link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold text-brand hover:underline"
-                  >
-                    {b.link.label} →
-                  </a>
-                ) : (
-                  <span className="text-sm text-[var(--fg-muted)]">Internal tool · demo on request</span>
-                )}
+                <div className="mt-4">
+                  {b.link ? (
+                    <a
+                      href={b.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-white underline decoration-brand decoration-2 underline-offset-4 hover:text-white/80"
+                    >
+                      {b.link.label} →
+                    </a>
+                  ) : (
+                    <span className="text-sm text-white/70">Internal tool · demo on request</span>
+                  )}
+                </div>
               </article>
             ))}
           </div>
