@@ -7,7 +7,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = generateMeta({
   title: 'Our Projects — Case Studies & Results',
-  description: 'Explore real case studies from businesses across UAE, Saudi Arabia, Canada and more. See measurable results from our digital marketing, SEO, Google Ads, and web development campaigns.',
+  description: 'Case studies from real NexaGrow clients. See the work we delivered — websites, SEO, Google Business optimization and WhatsApp booking systems — and the results it produced.',
   slug: 'portfolio',
   keywords: ['digital marketing case studies', 'marketing results UAE', 'SEO case study', 'Google Ads results', 'portfolio NexaGrow'],
 });
@@ -25,7 +25,7 @@ export default function PortfolioPage() {
           as="h1"
             label="Our Projects"
             title="Real Results, Real Clients"
-            subtitle="Browse our case studies and see how we have helped businesses achieve measurable growth."
+            subtitle="We would rather show you a small number of projects we genuinely delivered than a long list we did not. More case studies are added as work completes."
             align="center"
           />
 

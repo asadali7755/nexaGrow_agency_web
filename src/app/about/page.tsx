@@ -32,7 +32,7 @@ export default function AboutPage() {
             NexaGrow was founded by Asad Ali with a simple but powerful vision: to help businesses across the Arab world, USA, and Canada unlock the full potential of digital marketing.
           </p>
           <p className="text-lg leading-relaxed">
-            What started as a freelance consulting practice quickly grew into a full-service agency with team members from 6+ countries, serving clients across 24+ markets. Our unique blend of local market insight and global best practices has helped over 100 businesses achieve measurable digital growth.
+            What started as a freelance consulting practice grew into a full-service agency with a small, senior team. We work with businesses in the Gulf, Pakistan and North America, combining local market insight with global best practices — and we take on fewer clients than we could so each one gets real attention.
           </p>
           <p className="text-lg leading-relaxed">
             Today, NexaGrow offers comprehensive services including social media marketing, AI automation, web development, Google Ads management, brand strategy, and content creation — all delivered by a team that is passionate about results.

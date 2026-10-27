@@ -1,12 +1,10 @@
 import Image from 'next/image';
 import { images } from '@/lib/pexels';
-import { Award, Briefcase, Globe } from 'lucide-react';
 
-const stats = [
-  { icon: Award, value: '100+', label: 'Clients Served' },
-  { icon: Briefcase, value: '10+', label: 'Years Experience' },
-  { icon: Globe, value: '24+', label: 'Markets Reached' },
-];
+// The three stat cards that used to sit here ("100+ Clients Served",
+// "10+ Years Experience", "24+ Markets Reached") were invented. Unverifiable
+// counts are easy for a buyer to doubt and impossible to defend on a call, so
+// the section now leads with what the agency actually does instead.
 
 const skills = ['Digital Strategy', 'Growth Marketing', 'AI Solutions', 'Brand Building', 'Team Leadership', 'Innovation'];
 
@@ -43,22 +41,11 @@ export default function FounderSection() {
               Driven by Results, Inspired by Growth
             </h2>
             <p className="mt-6 text-gray-300 text-lg leading-relaxed">
-              Asad Ali founded NexaGrow with a clear mission: to help businesses across the Arab world, USA, and Canada unlock the full potential of digital marketing. With over a decade of experience in growth marketing, AI automation, and brand strategy, Asad has personally guided 100+ businesses to measurable digital success.
+              Asad Ali founded NexaGrow to help businesses across the Gulf, Pakistan and North America get measurable results from digital marketing instead of vanity metrics. He works hands-on with every client on strategy, campaigns and AI automation.
             </p>
             <p className="mt-4 text-gray-400 leading-relaxed">
-              His hands-on approach and deep understanding of both Eastern and Western markets makes NexaGrow uniquely positioned to deliver global results with local insight.
+              The agency is deliberately small, which means the person who plans your campaign is the person who runs it — no account-manager layer between you and the work.
             </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-8">
-              {stats.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="text-center p-4 rounded-lg bg-white/5 border border-white/10">
-                  <Icon className="w-6 h-6 text-brand mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-white">{value}</div>
-                  <div className="text-xs text-gray-400 mt-1">{label}</div>
-                </div>
-              ))}
-            </div>
 
             {/* Skills */}
             <div className="flex flex-wrap gap-2 mt-8">

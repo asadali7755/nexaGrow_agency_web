@@ -27,10 +27,15 @@ export default function TestimonialsSlider() {
   };
 
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isPlaying || testimonials.length === 0) return;
     const timer = setInterval(nextSlide, interval);
     return () => clearInterval(timer);
   }, [isPlaying, nextSlide, interval]);
+
+  // No real testimonials yet — render nothing rather than an empty slider or
+  // placeholder quotes. The section reappears on its own once lib/team.ts
+  // has at least one genuine entry.
+  if (testimonials.length === 0) return null;
 
   const t = testimonials[current];
 

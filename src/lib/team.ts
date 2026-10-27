@@ -56,52 +56,9 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const testimonials: Testimonial[] = [
-  {
-    name: 'Ahmed Al-Maktoum',
-    role: 'Owner',
-    company: 'Zafran Kitchen',
-    city: 'Dubai',
-    country: 'UAE',
-    flag: '🇦🇪',
-    quote: 'NexaGrow transformed our Instagram from 2K to 20K followers in just 4 months. Our weekday tables are now fully booked. The ROI has been incredible — best investment we ever made.',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200',
-    projectImage: 'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=400',
-    industryLabel: 'Restaurant & F&B',
-    results: [
-      { label: 'Order Growth', value: '+312%' },
-      { label: 'New Followers', value: '+18K' },
-    ],
-  },
-  {
-    name: 'Fatima Al-Saud',
-    role: 'Marketing Director',
-    company: 'AlNoor Properties',
-    city: 'Riyadh',
-    country: 'Saudi Arabia',
-    flag: '🇸🇦',
-    quote: 'We went from zero online presence to 200+ qualified leads per month. NexaGrow understands the Saudi market deeply and delivered results beyond our expectations.',
-    image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200',
-    projectImage: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400',
-    industryLabel: 'Real Estate',
-    results: [
-      { label: 'Leads/Month', value: '200+' },
-      { label: 'ROI', value: '6x' },
-    ],
-  },
-  {
-    name: 'Michael Thompson',
-    role: 'Founder',
-    company: 'UrbanEdge Store',
-    city: 'Toronto',
-    country: 'Canada',
-    flag: '🇨🇦',
-    quote: 'We were burning money on Facebook ads with no results. NexaGrow restructured everything and took us from $12K to $58K per month. They are true growth partners.',
-    image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=200',
-    projectImage: 'https://images.pexels.com/photos/5632398/pexels-photo-5632398.jpeg?auto=compress&cs=tinysrgb&w=400',
-    industryLabel: 'E-Commerce',
-    results: [
-      { label: 'Revenue Growth', value: '+383%' },
-      { label: 'ROAS', value: '5.2x' },
-    ],
-  },
+  // Empty on purpose. This list held three invented quotes from people who do
+  // not exist (Ahmed Al-Maktoum, Fatima Al-Saud, Michael Thompson), attached to
+  // stock photos. Fake testimonials are the fastest way to lose a buyer who
+  // reverse-searches the photo. Add real ones here as clients give them —
+  // the homepage slider shows itself again automatically once this is non-empty.
 ];
