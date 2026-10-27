@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Mail, MessageCircle } from 'lucide-react';
 import { CONTACT_EMAIL, whatsappLink } from '@/lib/site';
@@ -10,6 +12,11 @@ export default function CTASection() {
 
   const buttonClass =
     'inline-flex items-center gap-3 px-8 py-4 bg-white text-brand font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg';
+
+  // The homepage CTA is the single most-clicked contact path on the site.
+  // Untracked, there is no way to tell whether traffic ever reaches intent.
+  const track = (event: string) => () =>
+    window.gtag?.('event', event, { location: 'home_cta' });
 
   return (
     <section className="always-red py-20 lg:py-28">
@@ -24,12 +31,18 @@ export default function CTASection() {
           {/* Falls back to the contact page when no number is configured —
               this button shipped as `wa.me/undefined` for a year. */}
           {wa ? (
-            <a href={wa} target="_blank" rel="noopener noreferrer" className={buttonClass}>
+            <a
+              href={wa}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonClass}
+              onClick={track('whatsapp_click')}
+            >
               <MessageCircle className="w-5 h-5" />
               Chat on WhatsApp
             </a>
           ) : (
-            <Link href="/contact" className={buttonClass}>
+            <Link href="/contact" className={buttonClass} onClick={track('contact_click')}>
               <MessageCircle className="w-5 h-5" />
               Get a Free Quote
             </Link>
@@ -37,6 +50,7 @@ export default function CTASection() {
           <a
             href={`mailto:${CONTACT_EMAIL}`}
             className="inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
+            onClick={track('email_click')}
           >
             <Mail className="w-5 h-5" />
             Send an Email
